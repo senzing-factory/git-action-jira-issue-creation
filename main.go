@@ -7,7 +7,7 @@ import (
 
 	jira "github.com/andygrunwald/go-jira"
 	"github.com/pkg/errors"
-	"github.com/senzing/git-action-jira-issue-creation/configuration"
+	"github.com/senzing-factory/github-action-jira-issue-creation/configuration"
 )
 
 func main() {
@@ -90,5 +90,6 @@ func main() {
 			result = fmt.Sprintf("%sbrowse/%s", JiraAccountURL, issue.Key)
 		}
 	}
-	fmt.Printf(fmt.Sprintf("::set-output name=jira_issue_url::%s", result))
+	formatted := fmt.Sprintf("::set-output name=jira_issue_url::%s", result)
+	fmt.Printf("%s", formatted)
 }
